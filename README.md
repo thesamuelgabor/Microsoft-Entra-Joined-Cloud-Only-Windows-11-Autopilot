@@ -84,7 +84,7 @@ Once the script completes, confirmed the device appeared under Devices → Enrol
 
 Restart the target device to OOBE. Device registers as Entra joined only, no on-prem identity involved at any point, and lands compliant with no IT hands-on-keyboard step.
 
-No apps are assigned at this stage — that's covered in the next project.
+No apps are assigned at this stage - that's covered in the next project.
 
 <img width="1026" height="769" alt="05-oobe-complete" src="https://github.com/user-attachments/assets/c2a2e2be-4058-4b77-ac69-2581aec07606" />
 

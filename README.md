@@ -41,7 +41,7 @@ The `-Online` switch skips the CSV export entirely: it signs in interactively as
 
 Once the script completes, confirmed the device appeared under Devices → Enrollment → Windows Autopilot devices with no separate import step. Change the Group tag to `GT-Autopilot-Pilot` in the portal.
 
-<img width="800" height="450" alt="image" src="docs/img/01b-hash-upload.png" />
+<img width="1614" height="462" alt="01b-hash-upload" src="https://github.com/user-attachments/assets/e384ac09-2237-490d-acb6-e42d6faa0a60" />
 
 *Ref 2: Device registered in the Intune admin center*
 

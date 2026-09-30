@@ -26,16 +26,16 @@ It establishes the baseline provisioning model that the rest of the Windows 11 t
 #### 1. Generate and Register the Hardware Hash — Direct Online Upload
 
 ```powershell
-Install-Script -Name Get-WindowsAutoPilotInfo -Force
-Install-Module -Name WindowsAutopilotIntune -Force
-Install-Module -Name Microsoft.Graph.Intune -Force
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
 
-Get-WindowsAutoPilotInfo -Online
+Install-Script -Name Get-WindowsAutopilotInfo -Force
+
+Get-WindowsAutopilotInfo -Online
 ```
 
 The `-Online` switch skips the CSV export entirely: it signs in interactively as an admin (a browser window opens for the Microsoft Entra ID credential prompt) and registers the device's hardware hash directly against the tenant over Microsoft Graph in the same run.
 
-<img width="800" height="450" alt="image" src="docs/img/01-hardware-hash.png" />
+<img width="1026" height="774" alt="01-hardware-hash" src="https://github.com/user-attachments/assets/1c6bfcba-687e-4558-971c-bb1a7895df7b" />
 
 *Ref 1: Admin sign-in prompt and direct hash registration*
 

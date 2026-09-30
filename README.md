@@ -45,13 +45,12 @@ Once the script completes, confirmed the device appeared under Devices → Enrol
 
 *Ref 2: Device registered in the Intune admin center*
 
-#### 2. Dynamic Entra ID Group — SG-Win11-Autopilot-Pilot
+#### 2. Dynamic Entra ID Group — DG-Win11-Autopilot-Pilot
 
 ```
 (device.devicePhysicalIds -any (_ -eq "[OrderID]:GT-Autopilot-Pilot"))
 ```
-
-<img width="1622" height="533" alt="02-dynamic-group png" src="https://github.com/user-attachments/assets/1182e8fd-19d2-452c-817f-750e3824bded" />
+<img width="1622" height="565" alt="02-dynamic-group" src="https://github.com/user-attachments/assets/3d1dabe7-4dac-43e7-adcc-84030918f5b0" />
 
 *Ref 3: Dynamic device group*
 
@@ -65,7 +64,7 @@ Once the script completes, confirmed the device appeared under Devices → Enrol
 | EULA / Privacy settings | Hide |
 | User account type | Standard |
 
-<img width="827" height="766" alt="03-deployment-profile" src="https://github.com/user-attachments/assets/c9a37274-fc6e-4f5d-b787-02ba94c00df0" />
+<img width="836" height="771" alt="03-deployment-profile" src="https://github.com/user-attachments/assets/85d00c34-c3eb-4e6a-936e-692c10b7d717" />
 
 *Ref 4: Cloud-only deployment profile*
 

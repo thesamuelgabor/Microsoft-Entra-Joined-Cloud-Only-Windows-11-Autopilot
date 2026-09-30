@@ -76,20 +76,16 @@ Once the script completes, confirmed the device appeared under Devices → Enrol
 | Allow users to collect logs on failure | Yes |
 | Timeout | 60 minutes |
 
-<img width="800" height="450" alt="image" src="docs/img/04-esp-config.png" />
+<img width="985" height="765" alt="04-esp-config" src="https://github.com/user-attachments/assets/2fbad643-8f47-44b6-a05e-3df8a7275765" />
 
 *Ref 5: ESP configuration*
 
 #### 5. End-to-End Enrollment
 
-Reset the target VM to OOBE (from the [Lab Environment Preparation](../00-Lab-Environment-Preparation) checkpoint) and enrolled live: device registers as Entra joined only, no on-prem identity involved at any point, and lands compliant with no IT hands-on-keyboard step.
+Restart the target device to OOBE. Device registers as Entra joined only, no on-prem identity involved at any point, and lands compliant with no IT hands-on-keyboard step.
 
-No apps are assigned at this stage — that's covered next, in the [Application Deployment](../02-Intune-Application-Deployment) project, before [Autopilot Device Preparation](../03-Windows-Autopilot-Device-Preparation) is introduced as an alternative to this flow.
+No apps are assigned at this stage — that's covered in the next project.
 
-<img width="800" height="450" alt="image" src="docs/img/05-oobe-complete.png" />
+<img width="1026" height="769" alt="05-oobe-complete" src="https://github.com/user-attachments/assets/c2a2e2be-4058-4b77-ac69-2581aec07606" />
 
 *Ref 6: Completed enrollment*
-
-## About
-
-Zero-touch Windows 11 provisioning as Microsoft Entra joined and cloud-only, built and validated end-to-end in a Microsoft 365 test tenant.

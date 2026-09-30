@@ -21,18 +21,29 @@ It establishes the baseline provisioning model that the rest of the Windows 11 t
 
 ## Steps
 
-#### 1. Generate and Register the Hardware Hash
+> **Note:** There are several ways to get a device's hardware hash into Autopilot — OEM/reseller pre-registration at the point of purchase, a Configuration Manager task sequence, a provisioning package built in Windows Configuration Designer, or running the export script directly on the device. For convenience in this lab, we used the PowerShell `-Online` method below, which registers the hash directly against the tenant with no manual CSV import step.
+
+#### 1. Generate and Register the Hardware Hash — Direct Online Upload
 
 ```powershell
 Install-Script -Name Get-WindowsAutoPilotInfo -Force
-Get-WindowsAutoPilotInfo -OutputFile hash.csv
+Install-Module -Name WindowsAutopilotIntune -Force
+Install-Module -Name Microsoft.Graph.Intune -Force
+
+Get-WindowsAutoPilotInfo -Online
 ```
 
-Imported `hash.csv` into Devices → Enrollment → Windows Autopilot devices, tagging the device `GT-Autopilot-Pilot`.
+The `-Online` switch skips the CSV export entirely: it signs in interactively as an admin (a browser window opens for the Microsoft Entra ID credential prompt) and registers the device's hardware hash directly against the tenant over Microsoft Graph in the same run.
 
 <img width="800" height="450" alt="image" src="docs/img/01-hardware-hash.png" />
 
-*Ref 1: Hardware hash registration*
+*Ref 1: Admin sign-in prompt and direct hash registration*
+
+Once the script completes, confirmed the device appeared under Devices → Enrollment → Windows Autopilot devices with no separate import step, and tagged it `GT-Autopilot-Pilot` in the portal.
+
+<img width="800" height="450" alt="image" src="docs/img/01b-hash-upload.png" />
+
+*Ref 2: Device registered in the Intune admin center*
 
 #### 2. Create the Deployment Profile — Entra Joined, Cloud-Only
 
@@ -46,7 +57,7 @@ Imported `hash.csv` into Devices → Enrollment → Windows Autopilot devices, t
 
 <img width="800" height="450" alt="image" src="docs/img/02-deployment-profile.png" />
 
-*Ref 2: Cloud-only deployment profile*
+*Ref 3: Cloud-only deployment profile*
 
 #### 3. Dynamic Entra ID Group — SG-Win11-Autopilot-Pilot
 
@@ -56,7 +67,7 @@ Imported `hash.csv` into Devices → Enrollment → Windows Autopilot devices, t
 
 <img width="800" height="450" alt="image" src="docs/img/03-dynamic-group.png" />
 
-*Ref 3: Dynamic device group*
+*Ref 4: Dynamic device group*
 
 #### 4. Enrollment Status Page (ESP)
 
@@ -68,7 +79,7 @@ Imported `hash.csv` into Devices → Enrollment → Windows Autopilot devices, t
 
 <img width="800" height="450" alt="image" src="docs/img/04-esp-config.png" />
 
-*Ref 4: ESP configuration*
+*Ref 5: ESP configuration*
 
 #### 5. End-to-End Enrollment
 
@@ -78,7 +89,7 @@ No apps are assigned at this stage — that's covered next, in the [Application 
 
 <img width="800" height="450" alt="image" src="docs/img/05-oobe-complete.png" />
 
-*Ref 5: Completed enrollment*
+*Ref 6: Completed enrollment*
 
 ## About
 

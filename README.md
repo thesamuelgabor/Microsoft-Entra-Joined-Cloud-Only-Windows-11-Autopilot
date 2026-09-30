@@ -39,7 +39,7 @@ The `-Online` switch skips the CSV export entirely: it signs in interactively as
 
 *Ref 1: Admin sign-in prompt and direct hash registration*
 
-Once the script completes, confirmed the device appeared under Devices → Enrollment → Windows Autopilot devices with no separate import step, and tagged it `GT-Autopilot-Pilot` in the portal.
+Once the script completes, confirmed the device appeared under Devices → Enrollment → Windows Autopilot devices with no separate import step. Change the Group tag to `GT-Autopilot-Pilot` in the portal.
 
 <img width="800" height="450" alt="image" src="docs/img/01b-hash-upload.png" />
 
